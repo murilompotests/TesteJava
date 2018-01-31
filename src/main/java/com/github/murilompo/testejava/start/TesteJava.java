@@ -34,11 +34,12 @@ public class TesteJava {
         LinkedHashMap<Vendedor, Double> vendedorTotalVendaIndexavel
                 = new LinkedHashMap(vendedorTotalVenda);
 
+        System.out.printf("%-15s%-15s\n", "Vendedor", "Total");
+
         vendedorTotalVendaIndexavel.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
                 .forEach(entry -> {
-                    System.out.println(entry.getKey().getNome());
-                    System.out.println(entry.getValue());
+                    System.out.printf("%-15s%-15.2f\n", entry.getKey().getNome(), entry.getValue());
                 });
     }
 
